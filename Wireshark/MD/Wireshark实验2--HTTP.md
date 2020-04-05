@@ -1,6 +1,6 @@
 ### 实验内容
 
-1.基本HTTPGET/response交互
+1.基本HTTP GET/response交互
 
 2.HTTP条件Get/response交互
 
@@ -14,7 +14,7 @@
 
 ### 实验步骤
 
-#### 1.基本HTTPGET/response交互
+#### 1.基本HTTP GET/response交互
 
 先开浏览器稍等一下（原因后面会解释），然后打开`wireshark`，点击开始捕获之后，在浏览器输入URL
 
@@ -46,33 +46,33 @@ http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file1.html
 浏览器跟服务器都是运行的HTTP1.1版本
 ```
 
-2.您的浏览器会从接服务器接受哪种语言(如果有的话)?
+2.您的浏览器会从接服务器接受哪种语言(如果有的话)?
 
 ```
 在请求消息图中的 Accept-Language 显示的是 zh-CN，也就是中文啦
 ```
 
-3.您的计算机的IP地址是什么?gaia.cs.umass.edu服务器地址呢?
+3.您的计算机的IP地址是什么?gaia.cs.umass.edu服务器地址呢?
 
 ```
 计算机的IP地址：192.168.43.0
 gaia.cs.umass.edu服务器地址：128.119.245.12
 ```
 
-4.服务器返回到浏览器的状态代码是什么?
+4.服务器返回到浏览器的状态代码是什么?
 
 ```
 200 ，代表OK
 ```
 
-5.服务器上HTML文件的最近一次修改是什么时候?
+5.服务器上HTML文件的最近一次修改是什么时候?
 
 ```
 在响应消息的图中显示的是
 Last-Modified: Sat, 04 Apr 2020 05:59:02 GMT\r\n
 ```
 
-6.服务器返回多少字节的内容到您的浏览器?
+6.服务器返回多少字节的内容到您的浏览器?
 
 ```
 在响应消息的图中显示的是128字节
@@ -80,7 +80,7 @@ Accept-Ranges: bytes
 Content-Length: 128\r\n
 ```
 
-7.通过检查数据包内容窗口中的原始数据,你是否看到有协议头在数据包列表窗口中未显示?如果
+7.通过检查数据包内容窗口中的原始数据,你是否看到有协议头在数据包列表窗口中未显示?如果
 是,请举一个例子。
 
 ```
@@ -99,7 +99,7 @@ TCP
 
 回答问题
 
-8.检查第一个从您浏览器到服务器的HTTPGET请求的内容。您在HTTPGET中看到了“IF-MODIFIED-SINCE”行吗?
+8.检查第一个从您浏览器到服务器的HTTP GET请求的内容。您在HTTP GET中看到了“IF-MODIFIED-SINCE”行吗?
 
 ```
 第一个GET请求中并没有看到
@@ -109,7 +109,7 @@ TCP
 
 
 
-9.检查服务器响应的内容。服务器是否显式返回文件的内容?你是怎么知道的?
+9.检查服务器响应的内容,服务器是否显式返回文件的内容?你是怎么知道的?
 
 ```
 是的。在 Line-based text data 里面可以看到
@@ -119,7 +119,7 @@ TCP
 
 
 
-10.现在,检查第二个HTTPGET请求的内容。您在HTTPGET中看到了“IF-MODIFIED-SINCE:”行吗?如果是,“IF-MODIFIED-SINCE:”头后面包含哪些信息?
+10.现在,检查第二个HTTP GET请求的内容。您在HTTP GET中看到了“IF-MODIFIED-SINCE:”行吗?如果是,“IF-MODIFIED-SINCE:”头后面包含哪些信息?
 
 ```
 If-Modified-Since: Sat, 04 Apr 2020 05:59:02 GMT\r\n
@@ -131,7 +131,7 @@ If-Modified-Since: Sat, 04 Apr 2020 05:59:02 GMT\r\n
 
 
 
-11.针对第二个HTTPGET,从服务器响应的HTTP状态码和短语是什么?服务器是否明确地返回文件的内容?请解释。
+11.针对第二个HTTP GET,从服务器响应的HTTP状态码和短语是什么?服务器是否明确地返回文件的内容?请解释。
 
 ```
 状态码短语：306 HTTP/1.1 304 Not Modified
@@ -146,7 +146,7 @@ If-Modified-Since: Sat, 04 Apr 2020 05:59:02 GMT\r\n
 
 #### 3.检索⻓文件
 
-这次从的URL
+这次的URL
 
 ```http
 http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html
@@ -164,7 +164,7 @@ http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html
 
 回答问题
 
-12.您的浏览器发送多少HTTPGET请求消息?哪个数据包包含了美国权利法案的消息?
+12.您的浏览器发送多少HTTP GET请求消息?哪个数据包包含了美国权利法案的消息?
 
 ```
 发送了1个HTTP GET请求消息，数据包620包含了美国权利法案的消息
@@ -174,13 +174,13 @@ http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html
 
 
 
-13.哪个数据包包含响应HTTPGET请求的状态码和短语?
+13.哪个数据包包含响应HTTP GET请求的状态码和短语?
 
 ```
 620
 ```
 
-14.响应中的状态码和短语是什么?
+14.响应中的状态码和短语是什么?
 
 ```
 200 OK 
@@ -188,13 +188,13 @@ http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html
 
 
 
-15.需要多少包含数据的TCP段来执行单个HTTP响应和权利法案文本?
+15.需要多少包含数据的TCP段来执行单个HTTP响应和权利法案文本?
 
 ```
 我这里包含了1个
 ```
 
-![G0x3ND.png](https://s1.ax1x.com/2020/04/05/G0x3ND.png)
+
 
 
 
@@ -214,7 +214,7 @@ http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html
 
 回答问题
 
-16.您的浏览器发送了几个HTTPGET请求消息?这些GET请求发送到哪个IP地址?
+16.您的浏览器发送了几个HTTP GET请求消息?这些GET请求发送到哪个IP地址?
 
 ```
 3个请求。发送到地址128.119.245.12。
@@ -222,7 +222,7 @@ http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file4.html
 
 
 
-17.浏览器从两个网站串行还是并行下载了两张图片?请说明。
+17.浏览器从两个网站串行还是并行下载了两张图片?请说明。
 
 ```
 并行。（官方是这么说的）
@@ -250,13 +250,13 @@ http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.htm
 
 回答问题
 
-18.对于您的浏览器的初始HTTPGET消息,服务器响应(状态码和短语)是什么响应?
+18.对于您的浏览器的初始HTTP GET消息,服务器响应(状态码和短语)是什么响应?
 
 ```
 401 Unauthorized
 ```
 
-19.当您的浏览器第二次发送HTTPGET消息时,HTTPGET消息中包含哪些新字段?
+19.当您的浏览器第二次发送HTTP GET消息时,HTTP GET消息中包含哪些新字段?
 
 ```
 如图，多了一下这段
@@ -300,7 +300,7 @@ Credentials: wireshark-students:network
 
 ### 附录
 
-####　1.谷歌浏览器清除缓存
+#### 1.谷歌浏览器清除缓存
 
 （记录一下防止以后忘了）
 
@@ -329,11 +329,11 @@ Credentials: wireshark-students:network
 
 #### 3.解码过程
 
-> 您输入的用户名(wireshark-students)和密码(network)按照客户端HTTPGET消息中请求头的“Authorization:Basic”的字符串(d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=)编码。
+> 您输入的用户名(wireshark-students)和密码(network)按照客户端HTTP GET消息中请求头的“Authorization:Basic”的字符串(d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=)编码。
 
 
 
-所谓用户名和密码可能“加密”，只是以一种称为Base64格式的格式进行编码。打开在线[解码工具](https://www.motobit.com/util/base64-decoder-encoder.asp)，输入HTTPGET消息中请求头的`Authorization:Basic`的字符串，也就是`d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=`。选择解码`decode`。
+所谓用户名和密码可能“加密”，只是以一种称为Base64格式的格式进行编码。打开在线[解码工具](https://www.motobit.com/util/base64-decoder-encoder.asp)，输入HTTP GET消息中请求头的`Authorization:Basic`的字符串，也就是`d2lyZXNoYXJrLXN0dWRlbnRzOm5ldHdvcms=`。选择解码`decode`。
 
 ![G0zNiF.png](https://s1.ax1x.com/2020/04/05/G0zNiF.png)
 
