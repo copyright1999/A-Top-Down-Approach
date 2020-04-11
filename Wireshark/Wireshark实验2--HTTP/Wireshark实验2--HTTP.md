@@ -80,8 +80,7 @@ Accept-Ranges: bytes
 Content-Length: 128\r\n
 ```
 
-7.通过检查数据包内容窗口中的原始数据,你是否看到有协议头在数据包列表窗口中未显示?如果
-是,请举一个例子。
+7.通过检查数据包内容窗口中的原始数据,你是否看到有协议头在数据包列表窗口中未显示?如果s是,请举一个例子。
 
 ```
 TCP
@@ -283,6 +282,10 @@ Credentials: wireshark-students:network
 ![G0zBs1.png](https://s1.ax1x.com/2020/04/05/G0zBs1.png)
 
 ![G0zUG4.png](https://s1.ax1x.com/2020/04/05/G0zUG4.png)
+
+
+
+
 
 
 
