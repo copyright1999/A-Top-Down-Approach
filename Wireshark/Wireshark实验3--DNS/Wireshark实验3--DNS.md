@@ -204,8 +204,8 @@ $sudo /etc/init.d/dns-clean start
 ![013.png](https://i.loli.net/2020/04/29/iFvujR7qObmZfCU.png)
 
 ```
-查询消息是query,目标端口是
-响应消息是response,源端口是
+查询消息是query,目标端口是53
+响应消息是response,源端口是53
 ```
 
 
@@ -256,7 +256,7 @@ DNS发送查询消息发送到202.96.128.166这个IP地址，本地DNS服务器�
 
 ##### 回答问题：
 
-9.DNS查询消息的目标端口是什么?DNS响应消息的源端口是什么?
+9.DNS查询消息的目标端口是什么?DNS响应消息的源端口是什么?
 
 ![JIX7DO.png](https://s1.ax1x.com/2020/04/29/JIX7DO.png)
 
